@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Internal Executive Dashboard - Secure Vault</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; margin: 0; padding: 0; color: #333; }
+        .header { background: #1e293b; color: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+        .header h2 { margin: 0; font-size: 18px; font-weight: 500; }
+        .user-info { font-size: 14px; color: #94a3b8; }
+        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+        .card { background: white; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 25px; margin-bottom: 25px; }
+        .card h3 { margin-top: 0; font-size: 16px; color: #334155; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+        th { background-color: #f1f5f9; color: #475569; font-weight: 600; }
+        .badge { background: #fee2e2; color: #991b1b; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+        .footer-nav { text-align: right; margin-top: 20px; }
+        .back-btn { padding: 8px 16px; background: #e2e8f0; color: #334155; text-decoration: none; border-radius: 4px; font-size: 13px; font-weight: 500; }
+        .back-btn:hover { background: #cbd5e1; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h2>Corporate Executive Portal [RESTRICTED VAULT]</h2>
+        <div class="user-info">Logged in as: <strong>admin</strong> (Root Clearance)</div>
+    </div>
+
+    <div class="container">
+        
+        <!-- FINANCE CATEGORY DATA -->
+        {% if doc_type == 'finance' %}
+        <div class="card">
+            <h3>Q3 Financial Summary & Budget Allocations</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Department / Project</th>
+                        <th>Allocated Budget</th>
+                        <th>Disbursed YTD</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cloud Infrastructure Expansion</td>
+                        <td>$1,200,000</td>
+                        <td>$850,000</td>
+                        <td><span class="badge">In Progress</span></td>
+                    </tr>
+                    <tr>
+                        <td>Executive Compensation Review</td>
+                        <td>$450,000</td>
+                        <td>$450,000</td>
+                        <td>Locked</td>
+                    </tr>
+                    <tr>
+                        <td>R&D AI Security Initiative</td>
+                        <td>$3,100,000</td>
+                        <td>$1,950,000</td>
+                        <td><span class="badge">Active</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- HUMAN RESOURCES CATEGORY DATA -->
+        {% elif doc_type == 'hr' %}
+        <div class="card">
+            <h3>Confidential Employee Directory & Salaries</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Employee Name</th>
+                        <th>Position</th>
+                        <th>Department</th>
+                        <th>Base Salary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sarah Jenkins</td>
+                        <td>Chief Financial Officer</td>
+                        <td>Finance</td>
+                        <td>$240,000</td>
+                    </tr>
+                    <tr>
+                        <td>Michael Chang</td>
+                        <td>Lead Infrastructure Engineer</td>
+                        <td>IT Operations</td>
+                        <td>$185,000</td>
+                    </tr>
+                    <tr>
+                        <td>Amanda Ross</td>
+                        <td>VP Human Resources</td>
+                        <td>HR</td>
+                        <td>$160,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- IT OPERATIONS CATEGORY DATA -->
+        {% elif doc_type == 'it' %}
+        <div class="card">
+            <h3>Infrastructure Network Topology & Access Keys</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service Subnet</th>
+                        <th>Gateway IP</th>
+                        <th>Access Token / Key</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>AWS Production S3 Gateway</td>
+                        <td>10.0.14.20</td>
+                        <td><code>AKIAIOSFODNN7EXAMPLE</code></td>
+                        <td>Online</td>
+                    </tr>
+                    <tr>
+                        <td>Core Database Cluster</td>
+                        <td>10.0.88.5</td>
+                        <td><code>db_pass_secure_991#</code></td>
+                        <td>Active</td>
+                    </tr>
+                    <tr>
+                        <td>Internal VPN Concentrator</td>
+                        <td>192.168.100.1</td>
+                        <td><code>vpn_shared_key_2026!</code></td>
+                        <td>Deprecated</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+
+        <div class="footer-nav">
+            <a href="/success.html" class="back-btn" onclick="history.back(); return false;">&larr; Return to Dashboard</a>
+        </div>
+    </div>
+
+</body>
+</html>

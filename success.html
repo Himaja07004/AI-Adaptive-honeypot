@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Global Enterprise Portal - Internal</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f3f4f6; margin: 0; padding: 0; }
+        .top-bar { background: #1e293b; color: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+        .container { max-width: 1000px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .card-header { background: #f8fafc; padding: 15px 20px; border-bottom: 1px solid #e2e8f0; border-radius: 6px 6px 0 0; }
+        h3 { color: #1e293b; margin: 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #cbd5e1; font-size: 14px; }
+        th { background: #f8fafc; color: #334155; }
+        a.action-link { color: #2563eb; text-decoration: none; font-weight: 600; }
+        a.action-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <h2>Global Enterprise Resource Network (ERN)</h2>
+        <span>Logged in as: {{ username|default:"@security_admin123" }}</span>
+    </div>
+
+    <div class="container">
+        <h3>Shared Document Repository (Restricted Access)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Document Name</th>
+                    <th>Category</th>
+                    <th>Last Modified</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Q3_Financial_Summary_Draft.pdf</td>
+                    <td>Finance</td>
+                    <td>Sep. 18, 2026</td>
+                    <td><a href="/download-secrets/?doc=finance" class="doc-link">View</a></td>
+                </tr>
+                <tr>
+                    <td>Employee_Directory_2026.xlsx</td>
+                    <td>Human Resources</td>
+                    <td>Sep. 10, 2026</td>
+                    <td><a href="/download-secrets/?doc=hr" class="doc-link">View</a></td>
+                </tr>
+                <tr>
+                    <td>Infrastructure_Network_Topology.vsdx</td>
+                    <td>IT Operations</td>
+                    <td>Aug. 28, 2026</td>
+                    <td><a href="/download-secrets/?doc=it" class="doc-link">View</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
